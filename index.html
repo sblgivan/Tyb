@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deriv Ticks Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      #status {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196F3;
+      }
+      #ticks-display {
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .tick-item {
+        margin-bottom: 5px;
+        padding: 5px;
+        background-color: #f1f1f1;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="status">Waiting for connection...</div>
+    <div class="button-container">
+      <button id="ticks">Subscribe Tickstream</button>
+      <button id="ticks-unsubscribe" disabled>Unsubscribe Tickstream</button>
+      <button id="ticks-history">Get Ticks History</button>
+    </div>
+    <div id="ticks-display"></div>
+
+    <script type="module" src="Html/index.js"></script>
+  </body>
+</html>
